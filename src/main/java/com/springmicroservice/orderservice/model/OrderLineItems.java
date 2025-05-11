@@ -23,4 +23,8 @@ public class OrderLineItems {
     private String skuCode;
     private BigDecimal price;
     private Integer quantity;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_id") // Đây là foreign key trỏ về bảng t_orders
+    private Order order;
 }
